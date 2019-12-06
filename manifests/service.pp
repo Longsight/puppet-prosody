@@ -13,7 +13,7 @@ class prosody::service {
         service { 'prosody' :
           ensure    => running,
           hasstatus => false,
-          restart   => '/usr/bin/prosodyctl reload',
+#          restart   => '/usr/bin/prosodyctl reload',   # Reload doesn't pick up the necessary changes
           require   => Class[prosody::config],
         }
       }
